@@ -1,0 +1,82 @@
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+  --bg:#FFFFFF; --surface:#FFFFFF; --ink:#16103D; --muted:#5C5780; --line:#DAD5F5;
+  --brand:#2B1BD9; --pop:#FFE14D; --hot:#FF3D81; --hot-ink:#FFFFFF; --bar:#FFFFFF;
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:#FF8A0A;z-index:10}
+.wrap{max-width:1040px;margin:0 auto;padding:0 16px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--hot);outline-offset:2px}
+
+/* hero */
+.hero{background:linear-gradient(#FF8A0A,#FF6A00);color:#0A1F7C;padding:8px 0;position:relative}
+.hero .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-family:"Bowlby One","Arial Black",Impact,sans-serif;font-size:clamp(3.4rem,17vw,8rem);line-height:.9;margin:0;letter-spacing:-.02em;color:#fff;text-shadow:5px 5px 0 var(--hot)}
+.logo{margin:0}
+.logo img{display:block;width:min(38vw,150px);height:auto}
+.tag{font-size:clamp(1.05rem,3.4vw,1.35rem);font-weight:600;max-width:34ch;margin:22px 0 0}
+.cta{display:inline-block;background:var(--pop);color:#16103D;font-weight:800;font-size:.95rem;text-decoration:none;padding:11px 16px;text-align:center;border-radius:999px;border:3px solid #16103D;box-shadow:4px 4px 0 #16103D}
+.cta:active{transform:translate(2px,2px);box-shadow:2px 2px 0 #16103D}
+
+/* faixa */
+.strip{background:#16103D;color:#16103D;border-block:3px solid #16103D;overflow:hidden;white-space:nowrap;font-weight:800;font-size:1.1rem}
+.strip div{display:inline-block;padding:10px 0;animation:run 70s linear infinite}
+.strip span{display:inline-block;margin:0 14px;padding:6px 18px;border-radius:999px;vertical-align:middle;line-height:1.25}
+.strip span:nth-of-type(4n+1){background:#FF3D81}
+.strip span:nth-of-type(4n+2){background:#FFE14D}
+.strip span:nth-of-type(4n+3){background:#3DDC97}
+.strip span:nth-of-type(4n+4){background:#5CC8FF}
+@keyframes run{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+/* boneco que corre atrás das frases (elas vão para a direita) */
+.strip .corre{display:inline-block;margin:0 18px;line-height:0;vertical-align:middle;font-style:normal}
+.strip .corre svg{display:block;animation:pula .4s ease-in-out infinite}
+.strip .pa{animation:passoA .4s steps(1) infinite}
+.strip .pb{animation:passoB .4s steps(1) infinite}
+@keyframes passoA{0%{opacity:1}50%{opacity:0}}
+@keyframes passoB{0%{opacity:0}50%{opacity:1}}
+@keyframes pula{50%{transform:translateY(-3px)}}
+@media (prefers-reduced-motion:reduce){.strip div,.strip .corre svg,.strip .pa,.strip .pb{animation:none}.strip .pb{opacity:0}}
+
+/* barra de busca/categorias */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bar);border-bottom:1.5px solid var(--line);padding:10px 0}
+.bar .wrap{display:flex;flex-direction:column;gap:10px}
+.busca-faixa{background:#FFE14D;border-bottom:3px solid #16103D;padding:10px 0}
+.search{display:block;width:min(100%,240px);font:inherit;font-size:.95rem;font-weight:600;color:#16103D;padding:9px 14px 9px 40px;border-radius:999px;border:2.5px solid #16103D;box-shadow:3px 3px 0 #16103D;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316103D' stroke-width='3' stroke-linecap='round'%3E%3Ccircle cx='10' cy='10' r='6.5'/%3E%3Cpath d='M15 15l6 6'/%3E%3C/svg%3E") no-repeat 14px center/17px}
+.search::placeholder{color:#5C5780;font-weight:400}
+.chips{display:flex;gap:8px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.chip{flex:none;font:inherit;font-weight:800;padding:8px 16px;border-radius:999px;border:2px solid var(--ink);background:var(--surface);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+
+/* produtos */
+.count{margin:22px 0 12px;font-weight:800;font-size:1.25rem}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;padding-bottom:36px}
+@media(min-width:700px){.grid{grid-template-columns:repeat(3,1fr);gap:18px}}
+@media(min-width:960px){.grid{grid-template-columns:repeat(4,1fr)}}
+.card{background:var(--surface);border:2px solid var(--ink);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;box-shadow:4px 4px 0 var(--ink)}
+.pic{aspect-ratio:1/1;display:grid;place-items:center;font-size:clamp(3.4rem,14vw,5rem);position:relative}
+.off{position:absolute;top:10px;left:10px;background:var(--hot);color:var(--hot-ink);font-weight:800;font-size:.9rem;padding:3px 10px;border-radius:999px;border:2px solid var(--ink)}
+.body{padding:12px;display:flex;flex-direction:column;gap:2px;flex:1}
+.name{font-weight:800;font-size:1rem;line-height:1.25;margin:0}
+.cat{color:var(--muted);font-size:.82rem}
+.old{color:var(--muted);text-decoration:line-through;font-size:.9rem;margin-top:8px}
+.price{font-size:1.6rem;font-weight:800;line-height:1.1}
+.price small{font-size:.85rem;font-weight:600}
+.buy{display:block;text-align:center;background:var(--hot);color:var(--hot-ink);text-decoration:none;font-weight:800;padding:12px 8px;border-radius:12px;border:2px solid var(--ink);margin-top:10px}
+.buy:active{transform:scale(.97)}
+.proprios{padding-top:26px;padding-bottom:34px}
+.sec{font-size:1.6rem;font-weight:800;margin:0;line-height:1.2}
+.sec-sub{margin:4px 0 16px;color:var(--muted)}
+.desc{color:var(--muted);font-size:.85rem;line-height:1.35;margin-top:4px}
+.pic img{width:100%;height:100%;object-fit:cover}
+.buy.own{background:var(--ink);color:#fff}
+.buy.soon{background:var(--line);color:var(--muted);border-color:var(--line);cursor:not-allowed}
+.vazio{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
+
+footer{background:var(--ink);color:var(--bg);padding:26px 0 32px;font-size:.9rem}
+footer b{font-family:"Bowlby One","Arial Black",sans-serif;font-size:1.4rem;font-weight:400;display:block;margin-bottom:6px}
+

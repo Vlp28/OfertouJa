@@ -1,0 +1,7 @@
+# Nunca suba estas coisas para o GitHub
+.env
+node_modules/
+auth/
+auth_info*/
+*.session
+produtos-bot.json.bak
