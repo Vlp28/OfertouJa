@@ -29,7 +29,9 @@ let produtos = [
 /* ================================================================= */
 // Atalho para pegar um elemento da página pelo id
 const $=id=>document.getElementById(id);
-let cats=["Todos",...new Set(produtos.map(p=>p.cat))];
+// Categorias que sempre aparecem, mesmo sem produto. Categorias novas dos produtos entram sozinhas.
+const CATEGORIAS_FIXAS=["Eletrônicos","Casa","Beleza"];
+let cats=["Todos",...new Set([...CATEGORIAS_FIXAS,...produtos.map(p=>p.cat)])];
 let atual="Todos", termo="";
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const brl=n=>n.toLocaleString("pt-BR",{minimumFractionDigits:2,maximumFractionDigits:2});
@@ -87,7 +89,7 @@ async function carregar(){
     const r=await fetch("produtos.json",{cache:"no-store"});
     if(r.ok){const d=await r.json();if(Array.isArray(d.produtos))produtos=d.produtos;}
   }catch(e){}
-  cats=["Todos",...new Set(produtos.map(p=>p.cat))];
+  cats=["Todos",...new Set([...CATEGORIAS_FIXAS,...produtos.map(p=>p.cat)])];
   chips();lista();
 }
 // Primeira vez que a página abre
