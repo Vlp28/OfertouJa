@@ -61,7 +61,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .pic{aspect-ratio:1/1;display:grid;place-items:center;font-size:clamp(3.4rem,14vw,5rem);position:relative}
 .off{position:absolute;top:10px;left:10px;background:var(--hot);color:var(--hot-ink);font-weight:800;font-size:.9rem;padding:3px 10px;border-radius:999px;border:2px solid var(--ink)}
 .body{padding:12px;display:flex;flex-direction:column;gap:2px;flex:1}
-.name{font-weight:800;font-size:1rem;line-height:1.25;margin:0}
+.name{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;font-weight:800;font-size:1rem;line-height:1.25;margin:0}
 .cat{color:var(--muted);font-size:.82rem}
 .old{color:var(--muted);text-decoration:line-through;font-size:.9rem;margin-top:8px}
 .price{font-size:1.6rem;font-weight:800;line-height:1.1}

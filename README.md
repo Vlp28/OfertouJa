@@ -1,6 +1,6 @@
 # Ofertou Já
 
-Vitrine de achadinhos da Shopee com links de afiliado. É um site parado (HTML, CSS e JavaScript puro), sem servidor e sem banco de dados, feito para ser hospedado de graça no GitHub Pages.
+Vitrine de achadinhos (Shopee, Shein, Mercado Livre) com links de afiliado. É um site parado (HTML, CSS e JavaScript puro), sem servidor e sem banco de dados, feito para ser hospedado de graça no GitHub Pages.
 
 Endereço previsto: **ofertouja.com.br**
 
@@ -36,7 +36,7 @@ Endereço previsto: **ofertouja.com.br**
 
 ## O que o site faz
 
-- Mostra os produtos em cards, com foto (emoji por enquanto), nome, categoria, preço e botão **Comprar na Shopee**.
+- Mostra os produtos em cards, com foto (emoji por enquanto), nome, categoria, preço e botão **Comprar na [loja]**.
 - Mostra etiqueta de desconto (ex.: `-50%`) e o preço antigo riscado, quando o produto tem preço antigo cadastrado. A porcentagem é calculada sozinha.
 - Tem **busca** por nome e **botões de categoria** (Todos, Casa, Beleza...). As categorias aparecem sozinhas a partir da lista de produtos.
 - A busca fica no alto, à esquerda, numa faixa amarela logo abaixo da faixa que corre. Os botões de categoria ficam fixos no topo quando a pessoa rola a página.
@@ -48,7 +48,7 @@ Endereço previsto: **ofertouja.com.br**
 ## Como funciona o modelo de afiliado
 
 1. A pessoa vê o produto no site.
-2. Clica em **Comprar na Shopee** e vai para a Shopee pelo link de afiliado.
+2. Clica em **Comprar na [loja]** e vai para a loja pelo link de afiliado.
 3. Se ela comprar, o dono do site ganha uma comissão. A pessoa **não paga nada a mais** por isso.
 
 Por isso o preço mostrado no site deve ser **o mesmo da Shopee**. O preço antigo (`antes`) só deve ser preenchido quando for o preço real que aparece lá, para o desconto ser verdadeiro. Os preços da Shopee mudam sem aviso, então vale revisar a lista de tempos em tempos.
@@ -104,7 +104,8 @@ Cada produto tem estes campos:
 | `antes` | Preço antigo, **opcional**. Se apagar, some o desconto e o riscado | `79.90` |
 | `emoji` | Desenho do card, enquanto não tem foto | `"🎧"` |
 | `cor` | Cor de fundo do card, em hexadecimal | `"#BFD9FF"` |
-| `link` | Seu link de afiliado da Shopee | `"https://s.shopee.com.br/xxxx"` |
+| `loja` | De qual loja é o produto (aparece no card e no botão) | `"Shopee"` |
+| `link` | Seu link de afiliado | `"https://s.shopee.com.br/xxxx"` |
 
 Para **adicionar** um produto, copie uma linha inteira, cole embaixo e troque os valores. Cuidado com a vírgula no fim de cada linha, exceto a última.
 
@@ -122,9 +123,9 @@ const MODO = "grupo";
 - `LINK_GRUPO`: troque pelo link de convite do seu grupo do WhatsApp. Ele é usado no botão do topo e nos botões dos produtos.
 - `MODO`: define para onde os botões dos produtos levam.
   - `"grupo"`: todos levam para o grupo (o botão fica escrito **Pegar no grupo**).
-  - `"shopee"`: cada botão leva para o campo `link` do produto (o botão fica escrito **Comprar na Shopee**).
+  - `"loja"`: cada botão leva para o campo `link` do produto (o botão fica escrito **Comprar na Shopee**, **Comprar na Shein** etc., conforme o campo `loja`).
 
-Para passar do grupo para a Shopee depois, basta trocar `"grupo"` por `"shopee"` e conferir se cada produto tem o seu link de afiliado.
+Para passar do grupo para a Shopee depois, basta trocar `"grupo"` por `"loja"` e conferir se cada produto tem o seu link de afiliado.
 
 ## Produtos próprios (3D)
 
@@ -238,15 +239,15 @@ Por fim, volte em **Settings > Pages** e ative **Enforce HTTPS** quando a opçã
 - **O repositório é público.** Qualquer pessoa pode ler o código. Nunca coloque senha, chave de API ou dados de login do WhatsApp nele. O `.gitignore` já bloqueia os nomes mais comuns, mas confira antes de subir.
 - **Os links de afiliado aparecem no site** de qualquer jeito, então não há problema neles estarem no código.
 - **O GitHub Pages serve só arquivos parados.** Não roda robô nem servidor.
-- **Marca registrada:** o site cita a Shopee. Leia as regras do programa de afiliados sobre o uso do nome e do logo deles.
-- **Preços:** a Shopee muda preço e estoque sem aviso. Revise a lista de vez em quando.
+- **Marca registrada:** o site cita Shopee, Shein e Mercado Livre. Leia as regras do programa de afiliados sobre o uso do nome e do logo deles.
+- **Preços:** as lojas mudam preço e estoque sem aviso. Revise a lista de vez em quando.
 
 ## Próximos passos
 
 - [ ] Colocar o link real do grupo do WhatsApp em `LINK_GRUPO`
 - [ ] Trocar os produtos de exemplo pelos produtos reais
 - [ ] Trocar os emojis por fotos dos produtos
-- [ ] Mudar `MODO` para `"shopee"` quando os links de afiliado estiverem prontos
+- [ ] Mudar `MODO` para `"loja"` quando os links de afiliado estiverem prontos
 - [ ] Ligar o domínio `ofertouja.com.br`
 - [ ] Criar um robô que lê as postagens do grupo e atualiza a lista de produtos sozinho (rodando em um servidor ou computador à parte, não no GitHub Pages)
 
