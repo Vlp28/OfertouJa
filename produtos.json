@@ -1,6 +1,18 @@
 {
-  "atualizado": "2026-10-29T00:43:16.594Z",
+  "atualizado": "2026-10-29T00:53:16.528Z",
   "produtos": [
+    {
+      "id": "mvsttvm6lcg",
+      "nome": "63% OFF",
+      "cat": "Casa",
+      "preco": 29.9,
+      "emoji": "🧺",
+      "cor": "#FFD9A8",
+      "foto": "",
+      "loja": "Shopee",
+      "link": "https://s.shopee.com.br/8KqdjYlpFR",
+      "data": "2026-10-29T00:50:18.318Z"
+    },
     {
       "id": "mvstgzeb0ux",
       "nome": "59% OFF",
