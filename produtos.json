@@ -1,4 +1,42 @@
 {
-  "atualizado": "",
-  "produtos": []
+  "atualizado": "2026-10-29T00:23:16.559Z",
+  "produtos": [
+    {
+      "id": "mvssrbgl4jh",
+      "nome": "51% OFF",
+      "cat": "Moda",
+      "preco": 58.99,
+      "emoji": "👕",
+      "cor": "#D9CCFF",
+      "foto": "",
+      "loja": "Shopee",
+      "link": "https://s.shopee.com.br/7puN8jY6dX",
+      "data": "2026-10-29T00:20:19.269Z"
+    },
+    {
+      "id": "mvssltdjiw4",
+      "nome": "Lencol Padrão, Queen, King 400 Fios Micropercal Jogo De Cama Casal 03…",
+      "cat": "Casa",
+      "preco": 28.9,
+      "emoji": "🧺",
+      "cor": "#FFD9A8",
+      "foto": "",
+      "loja": "Shopee",
+      "link": "https://s.shopee.com.br/8AXCqjqnLg",
+      "data": "2026-10-29T00:16:02.551Z",
+      "antes": 68.81
+    },
+    {
+      "id": "mvsslhuy3vf",
+      "nome": "41% OFF",
+      "cat": "Casa",
+      "preco": 34.89,
+      "emoji": "🧺",
+      "cor": "#FFD9A8",
+      "foto": "",
+      "loja": "Shopee",
+      "link": "https://s.shopee.com.br/6L5ZLvs9wi",
+      "data": "2026-10-29T00:15:47.626Z"
+    }
+  ]
 }
