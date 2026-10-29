@@ -1,6 +1,18 @@
 {
-  "atualizado": "2026-10-29T00:23:16.559Z",
+  "atualizado": "2026-10-29T00:33:16.483Z",
   "produtos": [
+    {
+      "id": "mvst46agsi6",
+      "nome": "33% OFF",
+      "cat": "Achados",
+      "preco": 29.99,
+      "emoji": "🛍️",
+      "cor": "#C8F2DA",
+      "foto": "",
+      "loja": "Shopee",
+      "link": "https://s.shopee.com.br/1gJjnS48Ek",
+      "data": "2026-10-29T00:30:19.096Z"
+    },
     {
       "id": "mvssrbgl4jh",
       "nome": "51% OFF",
