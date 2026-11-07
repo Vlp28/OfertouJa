@@ -3,7 +3,7 @@
 const LINK_GRUPO = "https://chat.whatsapp.com/KTiGnNSg9xJ6MZV7xvUXYb";
 // "grupo"  = todos os botões levam para o grupo
 // "loja"   = cada botão leva para o link de afiliado do produto (Shopee, Shein, Mercado Livre...)
-const MODO = "grupo";
+const MODO = "loja";
 
 /* ===== PRODUTOS PRÓPRIOS (3D) =====
    comprar: link de pagamento do produto (Mercado Pago, PagBank, InfinitePay...). O cliente paga
