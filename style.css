@@ -72,11 +72,33 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(-
 .sec{font-size:1.6rem;font-weight:800;margin:0;line-height:1.2}
 .sec-sub{margin:4px 0 16px;color:var(--muted)}
 .desc{color:var(--muted);font-size:.85rem;line-height:1.35;margin-top:4px}
+.ultimas{color:#B4232F;font-weight:800;font-size:.8rem;margin-top:4px}
 .pic img{width:100%;height:100%;object-fit:cover}
 .buy.own{background:var(--ink);color:#fff}
+.buy.cartao{background:#fff;color:var(--ink)}
 .buy.soon{background:var(--line);color:var(--muted);border-color:var(--line);cursor:not-allowed}
+/* janela do Pix */
+.modal{position:fixed;inset:0;z-index:50;background:rgba(22,16,61,.65);display:grid;place-items:center;padding:16px;overflow:auto}
+.modal[hidden]{display:none}
+.modal-caixa{position:relative;background:#fff;border:3px solid var(--ink);border-radius:18px;box-shadow:6px 6px 0 var(--ink);padding:20px;width:min(100%,380px);max-height:100%;overflow:auto}
+.modal-caixa h3{margin:0 28px 4px 0;font-size:1.15rem;line-height:1.25}
+.modal-fechar{position:absolute;top:8px;right:10px;border:0;background:none;font-size:2rem;line-height:1;color:var(--ink);cursor:pointer}
+.pix-valor{font-size:1.8rem;font-weight:800;margin:0 0 6px}
+.pix-qr{display:grid;place-items:center;margin:10px 0;min-height:0}
+.pix-rot{display:block;font-weight:800;font-size:.85rem;margin-top:6px}
+#pix-codigo{width:100%;font:12px/1.3 ui-monospace,Consolas,monospace;padding:8px;border:2px solid var(--line);border-radius:10px;resize:none;color:var(--ink);background:#fff}
+.modal-caixa .buy{width:100%;font:inherit;font-weight:800;cursor:pointer}
+.pix-aviso{font-size:.82rem;color:var(--muted);margin:10px 0 0}
 .vazio{grid-column:1/-1;text-align:center;color:var(--muted);padding:40px 0}
 
 footer{background:var(--ink);color:var(--bg);padding:26px 0 32px;font-size:.9rem}
 footer b{font-family:"Bowlby One","Arial Black",sans-serif;font-size:1.4rem;font-weight:400;display:block;margin-bottom:6px}
 
+
+/* Escolha de opção no card (ex.: time do chaveiro) */
+.opc{display:block;margin-top:10px;font-weight:700;font-size:.9rem}
+.opc select{display:block;width:100%;margin-top:4px;padding:10px;border:2px solid var(--ink);border-radius:10px;font:inherit;font-weight:600;background:#fff;color:var(--ink)}
+.opc select.erro{border-color:#d4002a}
+.opc-erro{display:block;margin-top:4px;color:#d4002a;font-weight:700;font-size:.85rem}
+.opc-aviso{display:block;margin-top:8px;font-size:.82rem;color:var(--muted)}
+.opc-aviso a{color:var(--ink);font-weight:700}

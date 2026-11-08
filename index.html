@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Ofertou Já</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -54,6 +57,22 @@
 </div></footer>
 
 
+<!-- Janela de pagamento por Pix (produtos 3D) -->
+<div class="modal" id="modal-pix" hidden role="dialog" aria-modal="true" aria-labelledby="pix-titulo">
+  <div class="modal-caixa">
+    <button type="button" class="modal-fechar" id="pix-fechar" aria-label="Fechar">×</button>
+    <h3 id="pix-titulo"></h3>
+    <p class="pix-valor" id="pix-valor"></p>
+    <div class="pix-qr" id="pix-qr"></div>
+    <label class="pix-rot" for="pix-codigo">Pix copia e cola</label>
+    <textarea id="pix-codigo" readonly rows="5"></textarea>
+    <button type="button" class="buy own" id="pix-copiar">Copiar código Pix</button>
+    <p class="pix-aviso">Pague pelo app do seu banco (escaneando o QR code ou colando o código). Depois, envie o comprovante e o endereço de entrega para a gente. O pedido é confirmado quando o pagamento aparecer na nossa conta.</p>
+    <a class="buy" id="pix-contato" href="#" target="_blank" rel="noopener" hidden>Enviar comprovante</a>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

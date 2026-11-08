@@ -137,10 +137,16 @@ A parte **Nossos produtos 3D** fica abaixo dos achadinhos (que são o foco) e us
 | `desc` | Descrição curta |
 | `preco` | Preço, com ponto (ex.: `29.90`) |
 | `emoji` e `cor` | Desenho e cor do fundo, enquanto não tem foto |
-| `foto` | Caminho da foto na pasta `docs` (ex.: `"docs/suporte.jpg"`). Se ficar `""`, usa o emoji |
-| `comprar` | Link de pagamento do produto. Se ficar `""`, o botão mostra **Em breve** |
+| `foto` | Caminho da foto (ex.: `"fotos3d/suporte.jpg"`, na pasta `fotos3d`). Se ficar `""`, usa o emoji |
+| `estoque` | Quantas unidades restam (opcional). De 1 a 5 aparece "Últimas unidades"; em `0` o botão vira **Esgotado**. O site não desconta sozinho: ao vender, diminua o número e sincronize |
+| `comprar` | Link de pagamento do produto. Se ficar `""`, usa o **Pagar com Pix** (se o `PIX` estiver preenchido) ou mostra **Em breve** |
 
-O site é parado (GitHub Pages), então o pagamento em si acontece na página do serviço de pagamento (Mercado Pago, PagBank, InfinitePay...). Crie um link de pagamento para cada produto lá e cole no campo `comprar`.
+O site é parado (GitHub Pages), então ele não processa pagamento sozinho. Há dois caminhos:
+
+1. **Link de pagamento** (Mercado Pago, PagBank, InfinitePay...): crie o link de cada produto lá e cole no campo `comprar`.
+2. **Pix direto para você:** preencha `PIX` (chave, nome e cidade) no começo do `script.js`. Os produtos 3D sem link de pagamento ganham o botão **Pagar com Pix**, que abre uma janela com o QR code e o código "copia e cola" já com o valor. O dinheiro cai direto na sua conta, mas **a confirmação é manual**: confira no app do banco antes de enviar o pedido.
+
+A chave Pix fica visível para quem abrir o código do site. Prefira uma **chave aleatória** (criada no app do banco), e não CPF, telefone ou e-mail. `CONTATO_VENDAS` (link `https://wa.me/55...`) mostra o botão "Enviar comprovante".
 
 ## Lista de produtos automática (produtos.json)
 
